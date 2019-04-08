@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="list-group">
-      <a *ngFor="let device of devices$ | async" href="#" class="list-group-item list-group-item-action">
-        {{device.name}}
-      </a>
+    <div class="col-sm-9">
+      <div class="list-group">
+        <a *ngFor="let device of devices$ | async" href="#" class="list-group-item list-group-item-action">
+          {{device.name}}
+        </a>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="mb-3">
-      <button type="button" class="btn btn-primary" (click)="AddDevice()">Add</button>
+    <div class="col-sm-3">
+        <button type="button" class="btn btn-primary" (click)="GetDevices()">Refresh</button>
     </div>
   </div>
 </div>

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Action } from '@ngrx/store';
-import { DeviceActionTypes } from '../actions/device.actions';
-
+import { DeviceActionTypes, LoadDevicesSuccess } from '../actions/device.actions';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class DeviceEffects {
@@ -18,6 +18,6 @@ export class DeviceEffects {
     switchMap(() => {
       console.log('ollo');
 
-      return [];
+      return of(new LoadDevicesSuccess([]));
     }));
 }

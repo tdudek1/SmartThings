@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { DeviceState } from '../store/reducers/device.reducer';
 import { Observable, of } from 'rxjs';
 import { Device } from '../models/device';
+import { LoadDevices } from '../store/actions/device.actions';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,5 +22,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.devices$ = this.store.select('devices');
   }   
+
+  getDevices() {
+    this.store.dispatch(new LoadDevices());
+  }
 
 }

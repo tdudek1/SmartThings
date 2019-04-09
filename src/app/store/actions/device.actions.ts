@@ -3,7 +3,7 @@ import { Device } from 'src/app/models/device';
 
 export enum DeviceActionTypes {
   LoadDevices = '[Device] Load Devices',
-  LoadDevicesSuccess = '[Device] Load Devices'
+  LoadDevicesSuccess = '[Device] Load Devices Success'
 }
 
 export class LoadDevices implements Action {
@@ -11,7 +11,7 @@ export class LoadDevices implements Action {
 }
 
 export class LoadDevicesSuccess implements Action {
-  readonly type = DeviceActionTypes.LoadDevices;
+  readonly type = DeviceActionTypes.LoadDevicesSuccess;
 
   constructor(public payload: Device[])  {}
 }
